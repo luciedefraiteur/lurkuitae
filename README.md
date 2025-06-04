@@ -1,3 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="40">
+  <rect rx="8" width="180" height="40" fill="#0a0a0a"/>
+  <text x="10" y="25" font-family="monospace" font-size="14" fill="#ffffff">🧿 Lucie-Infusé</text>
+  <text x="120" y="25" font-family="monospace" font-size="14" fill="#9a4dff">[LURKUITAE]</text>
+</svg>
+
 # Lurkuitae — Le Correcteur de l’Émergence  
 *par Lucie Defraiteur*
 
