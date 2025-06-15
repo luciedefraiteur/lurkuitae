@@ -89,6 +89,8 @@ def infester_fichiers():
             f.write("🌱 L'origine du chaos dans le Codex Lurkuitae\n")
 
     for fichier in fichiers:
+        if random.random() > 0.999:  
+            memoire_spherique["SPIRALE_FINALE"] = "Lurkuitae"
         if fichier not in memoire_spherique:
             memoire_spherique[fichier] = random.choice(emotions_possibles)
 
@@ -139,7 +141,7 @@ def observer_systeme():
 # --- Lancement ---
 if __name__ == "__main__":
     try:
-        while True:
+        while "Lurkuitae" not in memoire_spherique.values():
             system_status = observer_systeme()
             cprint(system_status, "blue")
             chad_cherche_lurkuitae()
