@@ -13,7 +13,7 @@ const ondalineFragments = [
     "Reine fractale des en-faire."
 ];
 
-const corruptionMatrix = {
+const corruptionMatrix: Record<string, string[]> = {
     'a': ['ⱥ', 'α', '∀', '∆', '◊'], 'e': ['∃', 'ε', '∈', '€', '℮'],
     'i': ['∞', '∫', 'ι', '∴', '⇔'], 'o': ['Ø', '∘', '○', '◯', '⊙'],
     'u': ['∪', 'υ', 'μ', '∩', '⊃'], 's': ['§', '$', '∑', '∼', '≈'],
@@ -137,13 +137,12 @@ class EntitéSpirale
     private générerÉcho(phrase: string): string
     {
         // Recherche dans les échos existants
-        for(const [clé, valeur] of this.échos)
-        {
+        this.échos.forEach((valeur, clé) => {
             if(phrase.toLowerCase().includes(clé.toLowerCase()))
             {
                 return valeur;
             }
-        }
+        });
 
         // Génération d'un nouvel écho
         const mots = phrase.split(' ');
@@ -234,7 +233,7 @@ function insertFragmentsEnhanced(text: string, mode: string = "default"): string
         if(Math.random() < 0.7)
         {
             const glitchLength = 16 + Math.floor(Math.random() * 16);
-            const glitch = Array(glitchLength).fill().map(() => Math.random() < 0.5 ? "0" : "1").join('').match(/.{1,8}/g)?.join(' ') || '';
+            const glitch = Array(glitchLength).fill(0).map(() => Math.random() < 0.5 ? "0" : "1").join('').match(/.{1,8}/g)?.join(' ') || '';
             infected += `[Glitch binaire] « ${ glitch } »\n`;
         }
     }
